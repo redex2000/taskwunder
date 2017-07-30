@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :password, length: 8..20
   validates :bio, :birth_date, :full_name, presence: true
+
+  mount_uploader :avatar, AvatarUploader
 end
