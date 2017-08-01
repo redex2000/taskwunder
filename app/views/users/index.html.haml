@@ -1,0 +1,15 @@
+.row
+  .col-md-10
+    %h1 All users
+    .pull-right= link_to 'Create', new_user_path, class: 'btn btn-info'
+    %table.table.table-hover
+      %thead
+        %tr
+          %td Email
+          %td
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= link_to user.email, user
+            %td= link_to '', edit_user_path(user), class: 'glyphicon glyphicon-edit'
+            %td= link_to '', user, class: 'glyphicon glyphicon-trash', method: :delete, data: { confirm: 'Are your sure?' }

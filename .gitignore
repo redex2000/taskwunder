@@ -18,3 +18,5 @@
 .idea/
 .rvmrc
 .byebug_history
+public/uploads/*
+coverage/*

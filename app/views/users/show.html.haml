@@ -1,0 +1,7 @@
+%h1 User's profile
+- if @user.avatar.present?
+  %p= image_tag @user.avatar.thumb.url
+%p= @user.full_name
+%p= @user.email
+%p= @user.birth_date
+
