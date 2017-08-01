@@ -26,9 +26,14 @@ FactoryGirl.define do
   factory :user do
     email { FFaker::Internet.email }
     password '12345678'
+    password_confirmation '12345678'
     full_name { FFaker::Name.name }
     birth_date { Date.today - 20.years }
     bio { 'I was born for loving you' }
+
+    factory :admin, class: 'User' do
+      admin true
+    end
 
   end
 end
