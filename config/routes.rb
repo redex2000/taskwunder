@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get 'site/welcome'
 
   root to: 'site#welcome'
-  resources :users
+  resources :users do
+    post :send_pdf, on: :member
+  end
   devise_scope :user do
     get '/sign_up', to: 'registrations#new'
     post '/sign_up', to: 'registrations#create'

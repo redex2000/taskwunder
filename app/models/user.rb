@@ -35,6 +35,7 @@ class User < ApplicationRecord
   include Devise::Models::Registerable
 
   scope :normal, -> { where admin:false }
+  scope :admin, -> { where admin:true }
 
   def admin?
     !!admin

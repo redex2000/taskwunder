@@ -1,3 +1,4 @@
+.pull-right= link_to 'Send', send_pdf_user_path(@user), method: :post, class: 'btn btn-info'
 %h1 User's profile
 - if @user.avatar.present?
   %p= image_tag @user.avatar.thumb.url

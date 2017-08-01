@@ -28,6 +28,7 @@ FactoryGirl.define do
     password '12345678'
     full_name { FFaker::Name.name }
     birth_date { Date.today - 20.years }
+    bio { 'I was born for loving you' }
 
   end
 end

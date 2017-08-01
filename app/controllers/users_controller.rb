@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :auth_and_set_user, only: [:show, :update, :edit, :destroy]
+  before_action :auth_and_set_user, only: [:show, :update, :edit, :destroy, :send_pdf]
 
   def index
     authorize User
@@ -36,6 +36,13 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to users_path, notice: 'User deleted successfully!'
+  end
+
+  def send_pdf
+    filename = ProfilePdfGenerator.new.generate(@user)
+    UserMailer.profile(@user, filename).deliver
+    File.unlink filename
+    redirect_to @user, notice: 'PDF file sended successfully!'
   end
 
   private

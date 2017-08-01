@@ -43,6 +43,7 @@ gem 'pundit'
 gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'mini_magick' # For processing images in carrierwave
+gem 'prawn'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +63,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'letter_opener'
 end
 
 group :test do
